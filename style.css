@@ -763,7 +763,7 @@ button {
     font-size: 1.2em;
   }
   .comando-2-snake {
-    width: 80%; /* Ocupar toda a largura disponível */
+    width: 100%; /* Ocupar toda a largura disponível */
     margin-right: 0; /* Remover a margem à direita */
   }
 }
