@@ -50,7 +50,7 @@
     [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
     [1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1],
     [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1],
-    [1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1],
+    [1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1],
     [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1],
     [1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1],
     [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1],
@@ -335,29 +335,29 @@ function allowDrop(event) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    const exitLink = document.getElementById("exitLink");
-    const confirmButton = document.getElementById("confirmButton");
-    const cancelButton = document.getElementById("cancelButton");
-    const modal = document.getElementById("confirmationModal");
+  const exitLink = document.getElementById("exitLink");
+  const confirmButton = document.getElementById("confirmButton");
+  const cancelButton = document.getElementById("cancelButton");
+  const modal = document.getElementById("confirmationModal");
 
-    exitLink.addEventListener("click", function (event) {
-        event.preventDefault(); // Impede a navegação padrão ao clicar no link
-        modal.style.display = "flex";
-    });
+  exitLink.addEventListener("click", function (event) {
+    event.preventDefault(); // Impede a navegação padrão ao clicar no link
+    modal.style.display = "flex";
+  });
 
-    confirmButton.addEventListener("click", function () {
-        // Lógica para sair aqui
-        console.log("Saindo...");
-        closeConfirmationModal();
-        window.location.href = exitLink.getAttribute("href"); // Navegar para a página
-    });
+  confirmButton.addEventListener("click", function () {
+    // Lógica para sair aqui
+    console.log("Saindo...");
+    closeConfirmationModal();
+    window.location.href = exitLink.getAttribute("href"); // Navegar para a página
+  });
 
-    cancelButton.addEventListener("click", function () {
-        console.log("A saída foi cancelada.");
-        closeConfirmationModal();
-    });
+  cancelButton.addEventListener("click", function () {
+    console.log("A saída foi cancelada.");
+    closeConfirmationModal();
+  });
 
-    function closeConfirmationModal() {
-        modal.style.display = "none";
-    }
+  function closeConfirmationModal() {
+    modal.style.display = "none";
+  }
 });
