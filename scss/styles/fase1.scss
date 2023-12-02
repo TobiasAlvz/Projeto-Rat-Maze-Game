@@ -436,55 +436,49 @@ button {
   }
 }
 
+// Adicione a regra de mídia para telas menores
 @media (max-width: 800px) {
   .bloco-snake {
-    width: 100%; /* Alterado para ocupar 100% da largura disponível */
-    box-sizing: border-box; /* Evitar que as bordas adicionem à largura */
-    padding: 0 16px; /* Adicionado algum espaçamento interno */
+    width: 180px;
+    gap: 8px;
   }
-
   .fase-1-snake,
   .fase-2-snake {
-    padding-top: 10px; /* Reduzido o espaçamento superior */
+    padding-top: 20px; // Ajuste no espaçamento superior
   }
-
   #arrow-right,
   #arrow-down,
   #arrow-left,
   #arrow-up {
-    width: 40%; /* Reduzido o tamanho dos botões de seta */
+    width: 50%;
   }
-
   .grid-snake {
-    display: flex; /* Alterado para flex para melhor alinhamento */
-    flex-direction: column; /* Empilhar os itens verticalmente */
     align-items: center;
+    justify-self: center;
   }
 
   .verde-snake {
-    width: 100%; /* Ocupar toda a largura disponível */
-    height: auto;
+    width: 200px;
+    height: 100px;
   }
 
   .modal-snake,
   .modal-exit-snake,
   .modal-game-over {
-    width: 90%; /* Mantido 90%, pois parece adequado */
-    max-width: 400px; /* Adicionado um máximo para evitar esticar demais em telas grandes */
-    margin: 0 auto;
+    min-width: 90%; // Ajuste na largura do modal para telas menores
+    margin: 0 auto; // Centralizar o modal
   }
 
   .thank-snake img {
-    width: 100%;
-    height: auto;
-    margin-top: 10px; /* Reduzido o espaçamento superior */
+    width: 100%; // Ocupar toda a largura disponível
+    height: auto; // Ajustar a altura automaticamente
+    margin-top: 20px; // Ajuste no espaçamento superior
   }
 
   .main-snake {
-    width: 100%; /* Ocupar toda a largura disponível */
-    max-width: 300px; /* Adicionado um máximo para evitar esticar demais em telas grandes */
-    height: auto; /* Ajustar altura automaticamente */
-    margin-right: 0;
+    width: 200px;
+    height: 100px;
+    margin-right: 0; // Remover margem à direita
     gap: 10px;
   }
 
@@ -492,24 +486,27 @@ button {
   .timer,
   .excluir-snake,
   .over-snake {
-    width: 100%; /* Ocupar toda a largura disponível */
+    width: 80%; // Ocupar toda a largura disponível
   }
 
   .s-snake {
-    margin-left: 0;
+    margin-left: 0; // Remover margem à esquerda
   }
 
-  .modal-confirm,
+  .modal-confirm {
+    padding: 10px; // Ajuste no espaçamento interno
+  }
+
   .over-snake {
-    padding: 16px; /* Ajuste no espaçamento interno */
+    padding: 10px; // Ajuste no espaçamento interno
   }
 
   h2 {
-    font-size: 1.2em;
+    font-size: 1.2em; // Redução no tamanho da fonte
   }
 
   .comando-2-snake {
-    width: 100%; /* Ocupar toda a largura disponível */
-    margin-right: 0; /* Remover a margem à direita */
+    width: 30%;
+    margin-right: 50px;
   }
 }
