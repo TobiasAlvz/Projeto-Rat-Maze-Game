@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+.theme-rat {
+  color: #000;
+  font-family: "Roboto Serif", serif;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 60px;
+}
+
+.wallpaper-rat {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-rat {
+  text-align: center;
+  padding: 20px;
+}
+
+.play-rat {
+  display: inline-block;
+  width: 230px;
+  height: 67px;
+  border-radius: 15px;
+  background: #333;
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 67px;
+  text-align: center;
+  text-decoration: none;
+  margin: 20px auto;
+  padding: 0;
+  cursor: pointer;
+  border: 3px solid #ff5733;
+  outline: none;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #ff8747;
+    border-color: #ff8747;
+  }
+}
+
+.rat-image,
+.food-image {
+  width: 256px;
+  height: 226px;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: inline;
+}
+
+.food-image {
+  width: 180px;
+  height: 160px;
+}
+
+@media (max-width: 768px) {
+  .theme-rat {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+
+  .play-rat {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+  }
+
+  .rat-image,
+  .food-image {
+    width: 150px;
+    height: 133px;
+  }
+
+  .food-image {
+    width: 120px;
+    height: 106px;
+  }
+}

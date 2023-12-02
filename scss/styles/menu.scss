@@ -1,0 +1,185 @@
+header img {
+  width: 86px;
+  height: 83px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+#theme-rat {
+  margin-bottom: 60px;
+}
+.janela-snake {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0000004f;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.fases-section {
+  margin-bottom: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fase-box {
+  width: 159px;
+  height: 105px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionando transições */
+
+  &:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &:hover {
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Adiciona uma sombra laranja ao passar o mouse */
+  }
+}
+
+.back-arrow {
+  width: 86px;
+}
+
+#food-image {
+  width: 86px;
+  height: 83px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.food-image,
+.back-arrow {
+  margin: 0 10px;
+}
+
+.credits {
+  margin-top: 25px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 18px;
+  opacity: 1;
+  width: 165px;
+  height: 34px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 10px 10px 10px #000000b6;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 4.5px;
+}
+
+@media (max-width: 768px) {
+  header img {
+    width: 50px;
+    height: 48px;
+  }
+
+  .menu {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .fase-box {
+    width: 120px;
+    height: 80px;
+    font-size: 12px;
+  }
+
+  #food-image,
+  .back-arrow {
+    width: 50px;
+    height: 48px;
+  }
+
+  .credits {
+    margin-top: 15px;
+    font-size: 14px;
+    width: 120px;
+    height: 25px;
+  }
+}
+
+.janela {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+
+  .modal {
+    background-color: #f46060; /* Cor de fundo da página */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+
+    .fechar {
+      background-color: #333; /* Cor de fundo do botão fechar */
+      color: #fff;
+      border: none;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .titulo {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333; /* Cor do texto do título */
+    }
+
+    .texto {
+      margin-bottom: 10px;
+      color: #333; /* Cor do texto regular */
+    }
+
+    .autor,
+    .docente {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #333; /* Cor do texto em negrito */
+    }
+  }
+}
