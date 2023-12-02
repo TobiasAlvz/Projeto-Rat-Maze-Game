@@ -304,24 +304,6 @@ header img {
   height: 50px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f46060;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
 .wallpaper-rat {
   width: 100%;
   height: 100vh;
@@ -336,195 +318,20 @@ body {
   justify-content: center;
 }
 
-.play-snake {
-  text-decoration: none;
-  background-color: #ff5733;
-  /* Cor de fundo laranja */
-  color: #fff;
-  font-size: 36px;
-  /* Tamanho de fonte menor */
-  padding: 15px 40px;
-  /* Mais espaço interno */
-  border-radius: 10px;
-  /* Bordas mais arredondadas */
-  text-align: center;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  /* Sombra mais suave */
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-top: 20px;
-  border: 3px solid #ff5733;
-  /* Borda com a mesma cor de fundo para dar um visual diferente */
-  outline: none;
-}
-
-.play-snake:hover {
-  background-color: #ff8747;
-  /* Cor de fundo mais clara ao passar o mouse */
-  border-color: #ff8747;
-  /* Borda mais clara ao passar o mouse */
-}
-
-.play-snake:hover {
-  opacity: 0.9;
-}
-
-/* Sessão 1 Menu de Snake Game */
-.menu-fase-1-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* Sessão 2 Menu de Snake Game */
-.menu-fase-2-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* Sessão 3 Menu de Snake Game */
-.menu-fase-3-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* Sessão Todos Menus de Snake Game */
-.menus-snake img {
-  display: flex;
-  width: 855px;
-  height: 130px;
-  margin-top: 36px;
-}
-
-.fases-snake {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 70px;
-  margin-top: 45px;
-}
-
-.fase-snake {
-  display: flex;
-  width: 165px;
-  height: 190px;
-  cursor: pointer;
-  opacity: 1;
-  margin-left: 10px;
-}
-
-.fase-snake:hover {
-  opacity: 0.9;
-}
-
-.voltar-snake {
-  font-family: "Luckiest Guy", cursive;
-  text-decoration: none;
-  background-color: #0f58c5;
-  color: #ffffff;
-  font-size: 35px;
-  opacity: 1;
-  width: 185px;
-  height: 50px;
-  border-radius: 30px;
-  text-align: center;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7137254902);
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  letter-spacing: 0.8px;
-  opacity: 1;
-  padding: 4px;
-}
-
-.voltar-snake:hover {
-  opacity: 0.9;
-}
-
-.creditos-snake {
-  font-family: "Luckiest Guy", cursive;
-  text-decoration: none;
-  background-color: #247d38;
-  color: #ffffff;
-  font-size: 35px;
-  opacity: 1;
-  width: 188px;
-  height: 50px;
-  border-radius: 30px;
-  text-align: center;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7137254902);
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  letter-spacing: 0.8px;
-  opacity: 1;
-  padding: 4.5px;
-}
-
-.creditos-snake:hover {
-  opacity: 0.9;
-}
-
-.sair-snake {
-  font-family: "Luckiest Guy", cursive;
-  text-decoration: none;
-  background-color: #bb1d1d;
-  color: #ffffff;
-  font-size: 35px;
-  opacity: 1;
-  width: 185px;
-  height: 50px;
-  border-radius: 30px;
-  text-align: center;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7137254902);
-  text-transform: uppercase;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  letter-spacing: 0.8px;
-  opacity: 1;
-  padding: 4px;
-}
-
-.sair-snake:hover {
-  opacity: 0.9;
-}
-
-.janela-snake {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-.janela-snake.abrir-snake {
-  display: flex;
-}
-.janela-snake .modal-green-snake {
+.modal-green-snake {
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
 }
-.janela-snake .modal-green-snake .opcao-snake {
+.modal-green-snake .opcao-snake {
   color: #032088;
   font-family: "Luckiest Guy", cursive;
   font-size: 24px;
   margin-bottom: 20px;
 }
-.janela-snake .modal-green-snake .opcao-snake a {
+.modal-green-snake .opcao-snake a {
   display: inline-block;
   margin: 10px;
   padding: 12px 24px;
@@ -535,27 +342,27 @@ body {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-.janela-snake .modal-green-snake .opcao-snake a.fechar-green-snake {
+.modal-green-snake .opcao-snake a.fechar-green-snake {
   background-color: #bb1d1d;
   border: 3px solid #bb1d1d;
   color: #ffffff;
 }
-.janela-snake .modal-green-snake .opcao-snake a.fechar-green-snake:hover {
+.modal-green-snake .opcao-snake a.fechar-green-snake:hover {
   background-color: #ffffff;
   color: #bb1d1d;
 }
-.janela-snake .modal-green-snake .opcao-snake a.parabens-snake {
+.modal-green-snake .opcao-snake a.parabens-snake {
   background-color: #032088;
   border: 3px solid #032088;
   color: #ffffff;
 }
-.janela-snake .modal-green-snake .opcao-snake a.parabens-snake:hover {
+.modal-green-snake .opcao-snake a.parabens-snake:hover {
   background-color: #ffffff;
   color: #032088;
 }
 
 .modal-snake {
-  width: 700px;
+  width: 100px;
   min-width: 500px;
   min-height: 380px;
   background-color: rgba(255, 255, 255, 0.7137254902);
@@ -564,24 +371,6 @@ body {
   border-radius: 30px;
   margin-bottom: 75px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7137254902);
-}
-
-.fechar-snake {
-  font-family: "Luckiest Guy", cursive;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  border-radius: 50%;
-  width: 55px;
-  height: 52px;
-  border: none;
-  outline: none;
-  font-size: 40px;
-  background-color: #bb1d1d;
-  opacity: 1;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 1.8px;
 }
 
 .fechar-snake:hover {
@@ -606,16 +395,6 @@ body {
   animation: abrir-modal 0.4s;
 }
 
-.titulo-snake {
-  font-family: "Luckiest Guy", cursive;
-  color: #032088;
-  font-size: 45px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 27px;
-}
-
 .texto-snake {
   text-align: center;
   font-size: 22px;
@@ -631,14 +410,6 @@ body {
   font-weight: bold;
   margin-left: 140px;
   margin-bottom: 5px;
-}
-
-.docente-snake {
-  text-align: center;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  margin-left: 92px;
 }
 
 .p-snake {
@@ -669,19 +440,6 @@ body {
   opacity: 0.9;
 }
 
-.system-snake {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.3098039216);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
 .modal-exit-snake {
   width: 490px;
   min-width: 200px;
@@ -694,72 +452,6 @@ body {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7137254902);
 }
 
-.fonte-snake {
-  font-family: "Luckiest Guy", cursive;
-  color: #032088;
-  font-size: 37px;
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-.nao-snake {
-  font-family: "Luckiest Guy", cursive;
-  font-size: 30px;
-  cursor: pointer;
-  padding: 10px 40px;
-  letter-spacing: 1px;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: none;
-  outline: none;
-  border-radius: 30px;
-  background-color: #000000;
-  color: #ffffff;
-  opacity: 1;
-}
-
-.nao-snake:hover {
-  opacity: 0.9;
-}
-
-.sim-snake {
-  font-family: "Luckiest Guy", cursive;
-  background-color: #bb1d1d;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 10px 40px;
-  font-size: 30px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  margin-left: 60px;
-  opacity: 1;
-}
-
-.sim-snake:hover {
-  opacity: 0.9;
-}
-
-.system-snake.exit-snake {
-  display: flex;
-}
-
-@keyframes sair-modal {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
 .exit-snake .modal-exit-snake {
   animation: sair-modal 0.4s;
 }
@@ -779,30 +471,6 @@ body {
   margin-top: 170px;
 }
 
-.quero-game {
-  font-family: "Luckiest Guy", cursive;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 26px;
-  opacity: 1;
-  padding: 8px 20px;
-  text-align: center;
-  border-radius: 30px;
-  background-color: #1b4dd0;
-  border: 4px solid rgba(255, 255, 255, 0.7058823529);
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7137254902);
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-top: 100px;
-  letter-spacing: 0.9px;
-  outline: none;
-}
-
-.quero-game:hover {
-  opacity: 0.9;
-}
-
-/* Sessão 1 Fase Labirinto de Snake Game */
 .fase-1-snake {
   display: flex;
   justify-content: center;
@@ -821,23 +489,6 @@ body {
 
 /* Sessão 2 Fase Labirinto de Snake Game */
 .fase-2-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 50px;
-}
-
-.laranjo-snake {
-  width: 599px;
-  height: 385px;
-  background-color: rgba(215, 177, 107, 0.5019607843);
-  border-radius: 10px;
-  margin-right: 15px;
-  margin-bottom: 18px;
-}
-
-/* Sessão 3 Fase Labirinto de Snake Game */
-.fase-3-snake {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -996,85 +647,6 @@ body {
   animation: over-modal 0.4s;
 }
 
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-  .janela-snake .modal-green-snake .opcao-snake h2 {
-    font-size: 24px;
-  }
-  .janela-snake .modal-green-snake .opcao-snake a {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-  .janela-snake .modal-green-snake .opcao-snake .fechar-green-snake {
-    margin-right: 8px;
-  }
-  .verde-snake {
-    height: 150px;
-  }
-  .play-snake {
-    font-size: 20px;
-    padding: 10px 24px;
-  }
-  .menu-fase-1-snake,
-  .menu-fase-2-snake,
-  .menu-fase-3-snake,
-  .menus-snake img {
-    width: 100%;
-  }
-  .fases-snake {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-  }
-  .fase-snake {
-    width: 100%;
-    margin-left: 0;
-  }
-  .voltar-snake,
-  .creditos-snake,
-  .sair-snake {
-    font-size: 16px;
-    width: 100%;
-    margin-top: 10px;
-  }
-  .thank-snake img {
-    width: 100%;
-  }
-  .quero-game {
-    font-size: 16px;
-    padding: 8px 12px;
-    margin-top: 20px;
-  }
-  .fase-1-snake,
-  .fase-2-snake,
-  .fase-3-snake {
-    padding-top: 20px;
-  }
-  .verde-snake,
-  .laranjo-snake,
-  .azul-snake {
-    width: 100%;
-  }
-  .main-snake {
-    width: 100%;
-    height: auto;
-    margin-bottom: 30px;
-  }
-  .timer,
-  .excluir-snake {
-    font-size: 14px;
-    padding: 6px;
-    margin-right: 5px;
-  }
-  .over-snake .modal-game-over {
-    width: 80%;
-  }
-  .tentar-novamente-snake {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
-}
 .modal-confirm {
   display: none;
   position: fixed;
@@ -1128,6 +700,71 @@ button {
   text-decoration: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  .bloco-snake {
+    width: 180px;
+    gap: 8px;
+  }
+  .fase-1-snake,
+  .fase-2-snake {
+    padding-top: 20px;
+  }
+  #arrow-right,
+  #arrow-down,
+  #arrow-left,
+  #arrow-up {
+    width: 50%;
+  }
+  .grid-snake {
+    align-items: center;
+    justify-self: center;
+    margin: -10px;
+  }
+  .verde-snake {
+    width: 200px;
+    height: 100px;
+  }
+  .modal-snake,
+  .modal-exit-snake,
+  .modal-game-over {
+    min-width: 90%;
+    margin: 0 auto;
+  }
+  .thank-snake img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+  .main-snake {
+    width: 200px;
+    height: 100px;
+    margin-right: 0;
+    gap: 10px;
+  }
+  .grid-snake img,
+  .timer,
+  .excluir-snake,
+  .over-snake {
+    width: 80%;
+  }
+  .s-snake {
+    margin-left: 0;
+  }
+  .modal-confirm {
+    padding: 10px;
+  }
+  .over-snake {
+    padding: 10px;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  .comando-2-snake {
+    width: 30%;
+    margin-right: 50px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
