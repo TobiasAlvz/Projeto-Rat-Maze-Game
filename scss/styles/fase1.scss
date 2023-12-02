@@ -438,6 +438,9 @@ button {
 
 // Adicione a regra de mídia para telas menores
 @media (max-width: 800px) {
+  body {
+    overflow: hidden;
+  }
   .bloco-snake {
     width: 180px;
     gap: 8px;
@@ -476,7 +479,7 @@ button {
   }
 
   .main-snake {
-    width: 200px;
+    width: 180px;
     height: 100px;
     margin-right: 0; // Remover margem à direita
     gap: 10px;
@@ -507,6 +510,6 @@ button {
 
   .comando-2-snake {
     width: 30%;
-    margin-right: 50px;
+    margin-right: 60px;
   }
 }
