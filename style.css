@@ -767,6 +767,14 @@ button {
     width: 30%;
     margin-right: 60px;
   }
+  .footer {
+    flex-direction: column; /* Empilhar os itens verticalmente */
+    align-items: center;
+  }
+  .footer a {
+    margin: 5px 0; /* Reduza a margem entre os links em telas menores */
+    display: block; /* Faça os links ocuparem toda a largura disponível */
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
