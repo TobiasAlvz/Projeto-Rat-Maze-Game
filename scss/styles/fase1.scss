@@ -1,21 +1,45 @@
+// Fonts
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 
-.fase-1-snake {
+$primaryColor: #032088;
+$secondaryColor: #bb1d1d;
+$backgroundColor: #ffffff;
+$backgroundBlur: 15px;
+$boxShadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+@mixin borderRadius($radius) {
+  border-radius: $radius;
+}
+
+@mixin boxShadow {
+  box-shadow: $boxShadow;
+}
+
+@mixin modalStyles {
+  background-color: $backgroundColor;
+  @include borderRadius(15px);
+  @include boxShadow;
+  padding: 20px;
+  text-align: center;
+}
+
+.level-1-rat {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 50px;
 }
 
-.verde-snake {
+.green-rat {
   width: 450px;
   height: 300px;
-  background-color: #91cd8b7d;
-  border-radius: 10px;
+  background-color: rgb(250, 250, 250);
+  @include borderRadius(10px);
   margin-right: 15px;
   margin-bottom: 18px;
 }
+
 #arrow-right,
 #arrow-down,
 #arrow-left,
@@ -38,14 +62,14 @@
   justify-content: center;
 }
 
-.modal-green-snake {
+.modal-win-rat {
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
 
-  .opcao-snake {
+  .rat-op {
     color: #032088;
     font-family: "Luckiest Guy", cursive;
     font-size: 24px;
@@ -62,7 +86,7 @@
       cursor: pointer;
       transition: background-color 0.3s, color 0.3s;
 
-      &.fechar-green-snake {
+      &.play-again {
         background-color: #bb1d1d;
         border: 3px solid #bb1d1d;
         color: #ffffff;
@@ -73,7 +97,7 @@
         }
       }
 
-      &.parabens-snake {
+      &.next-rat {
         background-color: #032088;
         border: 3px solid #032088;
         color: #ffffff;
@@ -87,23 +111,36 @@
   }
 }
 
-.modal-snake {
+.modal-rat {
   width: 100px;
   min-width: 500px;
   min-height: 380px;
-  background-color: #ffffffb6;
-  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.71);
+  backdrop-filter: blur($backgroundBlur);
   padding: 20px;
-  border-radius: 30px;
+  @include borderRadius(30px);
   margin-bottom: 75px;
-  box-shadow: 10px 10px 10px #000000b6;
+  @include boxShadow;
 }
 
 .fechar-snake:hover {
   opacity: 0.9;
 }
 
-.janela-snake.abrir-snake {
+.win-rat {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0000004f;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.win-rat.open {
   display: flex;
 }
 
@@ -119,11 +156,11 @@
   }
 }
 
-.abrir-snake .modal-snake {
+.open .modal-snake {
   animation: abrir-modal 0.4s;
 }
 
-.texto-snake {
+.text-rat {
   text-align: center;
   font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
@@ -131,16 +168,7 @@
   margin-bottom: 4px;
 }
 
-.autor-snake {
-  text-align: center;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  margin-left: 140px;
-  margin-bottom: 5px;
-}
-
-.p-snake {
+.p-rat {
   display: flex;
   width: 200px;
   height: 100px;
@@ -148,7 +176,7 @@
   margin-bottom: 20px;
 }
 
-.s-snake {
+.s-rat {
   display: flex;
   width: 50px;
   height: 45px;
@@ -164,76 +192,27 @@
   height: 50px;
 }
 
-.fechar-green-snake:hover {
+.close-green-rat:hover {
   opacity: 0.9;
 }
 
-.modal-exit-snake {
+.modal-exit-rat {
   width: 490px;
   min-width: 200px;
   min-height: 200px;
-  background-color: #ffffffc4;
-  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.77);
+  backdrop-filter: blur($backgroundBlur);
   padding: 15px;
-  border-radius: 30px;
+  @include borderRadius(30px);
   margin-bottom: 100px;
-  box-shadow: 10px 10px 10px #000000b6;
+  @include boxShadow;
 }
 
-.exit-snake .modal-exit-snake {
-  animation: sair-modal 0.4s;
+.exit-rat .modal-exit-rat {
+  animation: exit-modal 0.4s;
 }
 
-/* Sessão Obrigado e Voltar */
-.voltar-quero-snake {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.thank-snake img {
-  display: flex;
-  width: 800px;
-  height: 140px;
-  margin-top: 170px;
-}
-
-.fase-1-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 50px;
-}
-
-.verde-snake {
-  width: 450px;
-  height: 300px;
-  background-color: rgb(224, 214, 214);
-  border-radius: 10px;
-  margin-right: 15px;
-  margin-bottom: 18px;
-}
-
-/* Sessão 2 Fase Labirinto de Snake Game */
-.fase-2-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 50px;
-}
-
-.azul-snake {
-  width: 599px;
-  height: 385px;
-  background-color: #638bc689;
-  border-radius: 10px;
-  margin-right: 15px;
-  margin-bottom: 18px;
-}
-
-/* Todos as Fases Labirinto de Snake Game */
-.back-snake {
+.back-rat {
   display: flex;
   width: 65px;
   height: 65px;
@@ -243,17 +222,17 @@
   margin-bottom: 370px;
 }
 
-.back-snake:hover {
+.back-rat:hover {
   opacity: 0.9;
 }
 
-.grid-snake {
+.grid-rat {
   display: grid;
 }
 
-.main-snake {
-  background-color: #d11a1a64;
-  border-radius: 10px;
+.main-rat {
+  background-color: rgba(209, 26, 26, 0.39);
+  @include borderRadius(10px);
   border: 3px solid #0e0d0d;
   width: 450px;
   height: 300px;
@@ -263,30 +242,30 @@
   margin-bottom: 85px;
 }
 
-.g-snake {
+.g-rat {
   width: 60px;
   height: 45px;
-  border-radius: 10px;
+  @include borderRadius(10px);
   cursor: pointer;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 3px;
 }
 
-.g-snake img {
+.g-rat img {
   width: 60px;
   height: 45px;
 }
 
-.comando-1-snake {
+.command-1-rat {
   display: flex;
 }
 
-.bloco-snake {
-  background-color: #ffffff64;
-  border-radius: 10px;
+.block-rat {
+  background-color: rgba(255, 255, 255, 0.39);
+  @include borderRadius(10px);
   border: 3px solid #000000;
-  width: 350px;
+  width: 400px;
   height: 63px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -296,7 +275,7 @@
   margin-right: 7px;
 }
 
-.f-snake {
+.f-rat {
   display: flex;
   width: 40px;
   height: 45px;
@@ -304,11 +283,11 @@
   opacity: 1;
 }
 
-.f-snake:hover {
+.f-rat:hover {
   opacity: 0.9;
 }
 
-.comando-2-snake {
+.command-2-rat {
   display: flex;
 }
 
@@ -321,7 +300,7 @@
   text-align: center;
   font-family: "Inter", sans-serif;
   background-color: #dd3838;
-  border-radius: 10px;
+  @include borderRadius(10px);
   border: 3px solid #000000;
   width: 200px;
   height: 63px;
@@ -335,10 +314,10 @@
   margin-right: 7px;
 }
 
-.excluir-snake {
+.delete-rat {
   font-family: "Luckiest Guy", cursive;
   background-color: #247d38;
-  border-radius: 10px;
+  @include borderRadius(10px);
   border: 3px solid #000000;
   cursor: pointer;
   width: 103px;
@@ -352,11 +331,11 @@
   text-transform: uppercase;
 }
 
-.excluir-snake:hover {
+.delete-rat:hover {
   opacity: 0.9;
 }
 
-.over-snake.game-snake {
+.over-rat.game-rat {
   display: flex;
 }
 
@@ -372,7 +351,7 @@
   }
 }
 
-.game-snake .modal-game-over {
+.game-rat .modal-game-over {
   animation: over-modal 0.4s;
 }
 
@@ -391,7 +370,7 @@
 .modal-content {
   background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
+  @include borderRadius(8px);
   text-align: center;
 }
 
@@ -401,7 +380,7 @@ button {
   cursor: pointer;
 }
 
-.over-snake {
+.game-over-rat {
   padding: 75px;
   display: none;
   position: fixed;
@@ -424,94 +403,91 @@ button {
     margin-bottom: 20px;
   }
 
-  .opcao-snake {
+  .option-rat {
     a {
       padding: 10px 20px;
       background-color: #7b8385;
       color: #fff;
       text-decoration: none;
-      border-radius: 5px;
+      @include borderRadius(5px);
       cursor: pointer;
     }
   }
 }
 
-// Adicione a regra de mídia para telas menores
 @media (max-width: 800px) {
   body {
     overflow: hidden;
   }
-  .bloco-snake {
+
+  .block-rat {
     width: 180px;
     gap: 8px;
   }
-  .fase-1-snake,
-  .fase-2-snake {
-    padding-top: 20px; // Ajuste no espaçamento superior
+
+  .level-1-rat {
+    padding-top: 20px;
   }
+
   #arrow-right,
   #arrow-down,
   #arrow-left,
   #arrow-up {
     width: 50%;
   }
-  .grid-snake {
+
+  .grid-rat {
     align-items: center;
     justify-self: center;
   }
 
-  .verde-snake {
+  .green-rat {
     width: 200px;
     height: 100px;
   }
 
-  .modal-snake,
-  .modal-exit-snake,
+  .modal-rat,
+  .modal-exit-rat,
   .modal-game-over {
-    min-width: 90%; // Ajuste na largura do modal para telas menores
-    margin: 0 auto; // Centralizar o modal
+    min-width: 90%;
+    margin: 0 auto;
   }
 
-  .thank-snake img {
-    width: 100%; // Ocupar toda a largura disponível
-    height: auto; // Ajustar a altura automaticamente
-    margin-top: 20px; // Ajuste no espaçamento superior
-  }
-
-  .main-snake {
+  .main-rat {
     width: 180px;
     height: 100px;
-    margin-right: 0; // Remover margem à direita
+    margin-right: 0;
     gap: 10px;
   }
 
-  .grid-snake img,
+  .grid-rat img,
   .timer,
-  .excluir-snake,
-  .over-snake {
-    width: 80%; // Ocupar toda a largura disponível
+  .delete-rat,
+  .over-rat {
+    width: 80%;
   }
 
-  .s-snake {
-    margin-left: 0; // Remover margem à esquerda
+  .s-rat {
+    margin-left: 0;
   }
 
   .modal-confirm {
-    padding: 10px; // Ajuste no espaçamento interno
+    padding: 10px;
   }
 
-  .over-snake {
-    padding: 10px; // Ajuste no espaçamento interno
+  .over-rat {
+    padding: 10px;
   }
 
   h2 {
-    font-size: 1.2em; // Redução no tamanho da fonte
+    font-size: 1.2em;
   }
 
-  .comando-2-snake {
+  .command-2-rat {
     width: 30%;
     margin-right: 60px;
   }
+
   .footer {
     display: none;
   }

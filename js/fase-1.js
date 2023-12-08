@@ -1,5 +1,5 @@
 (function () {
-  let green = document.querySelector(".verde-snake");
+  let green = document.querySelector(".green-rat");
   let greenSnake = green.getContext("2d");
 
   let arrowLeft = document.querySelector("#arrow-left");
@@ -11,7 +11,7 @@
   let WIDTH = green.width;
   let HEIGHT = green.height;
 
-  let quantidadeMaca = 3;
+  let quantidadeMaca = 1;
   let maçasComidas = 0;
   let initialSnakeLength = 1;
 
@@ -82,7 +82,7 @@
 
   function renderSnake() {
     greenSnake.fillStyle = "#FF0000";
-    greenSnake.fillStyle = "img/rat.png";
+    greenSnake.fillStyle = player.image;
     for (let i = 0; i < snake.length; i++) {
       greenSnake.fillRect(
         snake[i].x,
@@ -124,16 +124,15 @@
   }
 
   function greenModal() {
-    const modal = document.getElementById("janela-snake");
-    modal.classList.add("abrir-snake");
+    const modal = document.getElementById("win-rat");
+    modal.classList.add("open");
 
     modal.addEventListener("click", (e) => {
-      if (e.target.id == "fechar-snake" || e.target.id == "janela-snake") {
-        modal.classList.remove("abrir-snake");
+      if (e.target.id == "fechar-snake" || e.target.id == "win-rat") {
+        modal.classList.remove("open");
       }
     });
   }
-
   function resetGame() {
     maçasComidas = 0;
     player.x = tileSize + 1;
@@ -297,7 +296,7 @@
         } else if (tile === 2) {
           let x = column * tileSize;
           let y = row * tileSize;
-          greenSnake.fillStyle = "rgb(224, 214, 214)";
+          greenSnake.fillStyle = "#FFFFFF";
           greenSnake.fillRect(x, y, tileSize, tileSize);
         }
       }
@@ -319,16 +318,18 @@ let selectedDirection = null;
 
 function drag(event) {
   selectedDirection = event.target.src;
-  document.querySelector(".g-snake").classList.add("drap");
+  document.querySelector(".g-rat").classList.add("drap");
 }
+
 function drop(event) {
   let img = document.createElement("img");
   img.src = selectedDirection;
-  document.querySelector(".g-snake").appendChild(img);
+  document.querySelector(".g-rat").appendChild(img);
 
-  document.querySelector(".g-snake").classList.remove("drap");
+  document.querySelector(".g-rat").classList.remove("drap");
   event.preventDefault();
 }
+
 function allowDrop(event) {
   event.preventDefault();
 }
@@ -340,15 +341,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("confirmationModal");
 
   exitLink.addEventListener("click", function (event) {
-    event.preventDefault(); // Impede a navegação padrão ao clicar no link
+    event.preventDefault();
     modal.style.display = "flex";
   });
 
   confirmButton.addEventListener("click", function () {
-    // Lógica para sair aqui
     console.log("Saindo...");
     closeConfirmationModal();
-    window.location.href = exitLink.getAttribute("href"); // Navegar para a página
+    window.location.href = exitLink.getAttribute("href");
   });
 
   cancelButton.addEventListener("click", function () {

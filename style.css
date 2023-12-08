@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
@@ -124,19 +123,6 @@ header img {
   margin-bottom: 60px;
 }
 
-.janela-snake {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.3098039216);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-}
-
 .fases-section {
   margin-bottom: 80px;
   width: 100%;
@@ -157,14 +143,14 @@ header img {
   color: #fff;
   text-align: center;
   border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionando transições */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .fase-box:not(:last-child) {
   margin-right: 10px;
 }
 .fase-box:hover {
-  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Adiciona uma sombra laranja ao passar o mouse */
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
 }
 
 .back-arrow {
@@ -238,7 +224,7 @@ header img {
     height: 25px;
   }
 }
-.janela {
+.credits-text {
   display: none;
   position: fixed;
   top: 0;
@@ -249,14 +235,14 @@ header img {
   justify-content: center;
   align-items: center;
 }
-.janela .modal {
-  background-color: #f46060; /* Cor de fundo da página */
+.credits-text .modal {
+  background-color: #f46060;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
 }
-.janela .modal .fechar {
-  background-color: #333; /* Cor de fundo do botão fechar */
+.credits-text .modal .close {
+  background-color: #333;
   color: #fff;
   border: none;
   padding: 10px;
@@ -264,33 +250,33 @@ header img {
   cursor: pointer;
   border-radius: 5px;
 }
-.janela .modal .titulo {
+.credits-text .modal .title {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #333; /* Cor do texto do título */
+  color: #333;
 }
-.janela .modal .texto {
+.credits-text .modal .text {
   margin-bottom: 10px;
-  color: #333; /* Cor do texto regular */
+  color: #333;
 }
-.janela .modal .autor,
-.janela .modal .docente {
+.credits-text .modal .student,
+.credits-text .modal .prof {
   font-weight: bold;
   margin-top: 10px;
-  color: #333; /* Cor do texto em negrito */
+  color: #333;
 }
 
-.fase-1-snake {
+.level-1-rat {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 50px;
 }
 
-.verde-snake {
+.green-rat {
   width: 450px;
   height: 300px;
-  background-color: rgba(145, 205, 139, 0.4901960784);
+  background-color: rgb(250, 250, 250);
   border-radius: 10px;
   margin-right: 15px;
   margin-bottom: 18px;
@@ -318,20 +304,20 @@ header img {
   justify-content: center;
 }
 
-.modal-green-snake {
+.modal-win-rat {
   background-color: #ffffff;
   border-radius: 15px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
 }
-.modal-green-snake .opcao-snake {
+.modal-win-rat .rat-op {
   color: #032088;
   font-family: "Luckiest Guy", cursive;
   font-size: 24px;
   margin-bottom: 20px;
 }
-.modal-green-snake .opcao-snake a {
+.modal-win-rat .rat-op a {
   display: inline-block;
   margin: 10px;
   padding: 12px 24px;
@@ -342,42 +328,55 @@ header img {
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
-.modal-green-snake .opcao-snake a.fechar-green-snake {
+.modal-win-rat .rat-op a.play-again {
   background-color: #bb1d1d;
   border: 3px solid #bb1d1d;
   color: #ffffff;
 }
-.modal-green-snake .opcao-snake a.fechar-green-snake:hover {
+.modal-win-rat .rat-op a.play-again:hover {
   background-color: #ffffff;
   color: #bb1d1d;
 }
-.modal-green-snake .opcao-snake a.parabens-snake {
+.modal-win-rat .rat-op a.next-rat {
   background-color: #032088;
   border: 3px solid #032088;
   color: #ffffff;
 }
-.modal-green-snake .opcao-snake a.parabens-snake:hover {
+.modal-win-rat .rat-op a.next-rat:hover {
   background-color: #ffffff;
   color: #032088;
 }
 
-.modal-snake {
+.modal-rat {
   width: 100px;
   min-width: 500px;
   min-height: 380px;
-  background-color: rgba(255, 255, 255, 0.7137254902);
+  background-color: rgba(255, 255, 255, 0.71);
   backdrop-filter: blur(15px);
   padding: 20px;
   border-radius: 30px;
   margin-bottom: 75px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7137254902);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .fechar-snake:hover {
   opacity: 0.9;
 }
 
-.janela-snake.abrir-snake {
+.win-rat {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3098039216);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.win-rat.open {
   display: flex;
 }
 
@@ -391,11 +390,11 @@ header img {
     transform: translate3d(0, 0, 0);
   }
 }
-.abrir-snake .modal-snake {
+.open .modal-snake {
   animation: abrir-modal 0.4s;
 }
 
-.texto-snake {
+.text-rat {
   text-align: center;
   font-size: 22px;
   font-family: Arial, Helvetica, sans-serif;
@@ -403,16 +402,7 @@ header img {
   margin-bottom: 4px;
 }
 
-.autor-snake {
-  text-align: center;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  margin-left: 140px;
-  margin-bottom: 5px;
-}
-
-.p-snake {
+.p-rat {
   display: flex;
   width: 200px;
   height: 100px;
@@ -420,7 +410,7 @@ header img {
   margin-bottom: 20px;
 }
 
-.s-snake {
+.s-rat {
   display: flex;
   width: 50px;
   height: 45px;
@@ -436,76 +426,27 @@ header img {
   height: 50px;
 }
 
-.fechar-green-snake:hover {
+.close-green-rat:hover {
   opacity: 0.9;
 }
 
-.modal-exit-snake {
+.modal-exit-rat {
   width: 490px;
   min-width: 200px;
   min-height: 200px;
-  background-color: rgba(255, 255, 255, 0.768627451);
+  background-color: rgba(255, 255, 255, 0.77);
   backdrop-filter: blur(15px);
   padding: 15px;
   border-radius: 30px;
   margin-bottom: 100px;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7137254902);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.exit-snake .modal-exit-snake {
-  animation: sair-modal 0.4s;
+.exit-rat .modal-exit-rat {
+  animation: exit-modal 0.4s;
 }
 
-/* Sessão Obrigado e Voltar */
-.voltar-quero-snake {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.thank-snake img {
-  display: flex;
-  width: 800px;
-  height: 140px;
-  margin-top: 170px;
-}
-
-.fase-1-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 50px;
-}
-
-.verde-snake {
-  width: 450px;
-  height: 300px;
-  background-color: rgb(224, 214, 214);
-  border-radius: 10px;
-  margin-right: 15px;
-  margin-bottom: 18px;
-}
-
-/* Sessão 2 Fase Labirinto de Snake Game */
-.fase-2-snake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 50px;
-}
-
-.azul-snake {
-  width: 599px;
-  height: 385px;
-  background-color: rgba(99, 139, 198, 0.537254902);
-  border-radius: 10px;
-  margin-right: 15px;
-  margin-bottom: 18px;
-}
-
-/* Todos as Fases Labirinto de Snake Game */
-.back-snake {
+.back-rat {
   display: flex;
   width: 65px;
   height: 65px;
@@ -515,16 +456,16 @@ header img {
   margin-bottom: 370px;
 }
 
-.back-snake:hover {
+.back-rat:hover {
   opacity: 0.9;
 }
 
-.grid-snake {
+.grid-rat {
   display: grid;
 }
 
-.main-snake {
-  background-color: rgba(209, 26, 26, 0.3921568627);
+.main-rat {
+  background-color: rgba(209, 26, 26, 0.39);
   border-radius: 10px;
   border: 3px solid #0e0d0d;
   width: 450px;
@@ -535,7 +476,7 @@ header img {
   margin-bottom: 85px;
 }
 
-.g-snake {
+.g-rat {
   width: 60px;
   height: 45px;
   border-radius: 10px;
@@ -545,20 +486,20 @@ header img {
   gap: 3px;
 }
 
-.g-snake img {
+.g-rat img {
   width: 60px;
   height: 45px;
 }
 
-.comando-1-snake {
+.command-1-rat {
   display: flex;
 }
 
-.bloco-snake {
-  background-color: rgba(255, 255, 255, 0.3921568627);
+.block-rat {
+  background-color: rgba(255, 255, 255, 0.39);
   border-radius: 10px;
   border: 3px solid #000000;
-  width: 350px;
+  width: 400px;
   height: 63px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -568,7 +509,7 @@ header img {
   margin-right: 7px;
 }
 
-.f-snake {
+.f-rat {
   display: flex;
   width: 40px;
   height: 45px;
@@ -576,11 +517,11 @@ header img {
   opacity: 1;
 }
 
-.f-snake:hover {
+.f-rat:hover {
   opacity: 0.9;
 }
 
-.comando-2-snake {
+.command-2-rat {
   display: flex;
 }
 
@@ -608,7 +549,7 @@ header img {
   margin-right: 7px;
 }
 
-.excluir-snake {
+.delete-rat {
   font-family: "Luckiest Guy", cursive;
   background-color: #247d38;
   border-radius: 10px;
@@ -625,11 +566,11 @@ header img {
   text-transform: uppercase;
 }
 
-.excluir-snake:hover {
+.delete-rat:hover {
   opacity: 0.9;
 }
 
-.over-snake.game-snake {
+.over-rat.game-rat {
   display: flex;
 }
 
@@ -643,7 +584,7 @@ header img {
     transform: translate3d(0, 0, 0);
   }
 }
-.game-snake .modal-game-over {
+.game-rat .modal-game-over {
   animation: over-modal 0.4s;
 }
 
@@ -672,7 +613,7 @@ button {
   cursor: pointer;
 }
 
-.over-snake {
+.game-over-rat {
   padding: 75px;
   display: none;
   position: fixed;
@@ -684,16 +625,16 @@ button {
   justify-content: center;
   background-color: #d31717;
 }
-.over-snake .modal-game-over {
+.game-over-rat .modal-game-over {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.over-snake h2 {
+.game-over-rat h2 {
   font-size: 2em;
   margin-bottom: 20px;
 }
-.over-snake .opcao-snake a {
+.game-over-rat .option-rat a {
   padding: 10px 20px;
   background-color: #7b8385;
   color: #fff;
@@ -706,12 +647,11 @@ button {
   body {
     overflow: hidden;
   }
-  .bloco-snake {
+  .block-rat {
     width: 180px;
     gap: 8px;
   }
-  .fase-1-snake,
-  .fase-2-snake {
+  .level-1-rat {
     padding-top: 20px;
   }
   #arrow-right,
@@ -720,50 +660,45 @@ button {
   #arrow-up {
     width: 50%;
   }
-  .grid-snake {
+  .grid-rat {
     align-items: center;
     justify-self: center;
   }
-  .verde-snake {
+  .green-rat {
     width: 200px;
     height: 100px;
   }
-  .modal-snake,
-  .modal-exit-snake,
+  .modal-rat,
+  .modal-exit-rat,
   .modal-game-over {
     min-width: 90%;
     margin: 0 auto;
   }
-  .thank-snake img {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-  }
-  .main-snake {
+  .main-rat {
     width: 180px;
     height: 100px;
     margin-right: 0;
     gap: 10px;
   }
-  .grid-snake img,
+  .grid-rat img,
   .timer,
-  .excluir-snake,
-  .over-snake {
+  .delete-rat,
+  .over-rat {
     width: 80%;
   }
-  .s-snake {
+  .s-rat {
     margin-left: 0;
   }
   .modal-confirm {
     padding: 10px;
   }
-  .over-snake {
+  .over-rat {
     padding: 10px;
   }
   h2 {
     font-size: 1.2em;
   }
-  .comando-2-snake {
+  .command-2-rat {
     width: 30%;
     margin-right: 60px;
   }
