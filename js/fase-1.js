@@ -1,27 +1,26 @@
 (function () {
-  let green = document.querySelector(".green-rat");
-  let greenSnake = green.getContext("2d");
-
+  let canvas = document.querySelector(".canvas-rat");
+  let rat = canvas.getContext("2d");
   let arrowLeft = document.querySelector("#arrow-left");
   let arrowUp = document.querySelector("#arrow-up");
   let arrowRight = document.querySelector("#arrow-right");
   let arrowDown = document.querySelector("#arrow-down");
 
   let tileSize = 17;
-  let WIDTH = green.width;
-  let HEIGHT = green.height;
+  let WIDTH = canvas.width;
+  let HEIGHT = canvas.height;
 
-  let quantidadeMaca = 1;
-  let maçasComidas = 0;
-  let initialSnakeLength = 1;
+  let food = 1;
+  let foodEaten = 0;
+  let ratLength = 1;
 
   let walls = [];
-  let snake = [];
+  let rat1 = [];
 
-  let snakeLeft = false;
-  let snakeUp = false;
-  let snakeRight = false;
-  let snakeDown = false;
+  let rat1Left = false;
+  let rat1Up = false;
+  let rat1Right = false;
+  let rat1Down = false;
 
   let countdownInterval;
 
@@ -71,8 +70,8 @@
     }
   }
 
-  for (let i = 0; i < initialSnakeLength; i++) {
-    snake.push({
+  for (let i = 0; i < ratLength; i++) {
+    rat1.push({
       x: player.x,
       y: player.y,
       width: tileSize,
@@ -80,43 +79,38 @@
     });
   }
 
-  function renderSnake() {
-    greenSnake.fillStyle = "#FF0000";
-    greenSnake.fillStyle = player.image;
-    for (let i = 0; i < snake.length; i++) {
-      greenSnake.fillRect(
-        snake[i].x,
-        snake[i].y,
-        snake[i].width,
-        snake[i].height
-      );
+  function renderRat() {
+    rat.fillStyle = "#FF0000";
+    rat.fillStyle = player.image;
+    for (let i = 0; i < rat1.length; i++) {
+      rat.fillRect(rat1[i].x, rat1[i].y, rat1[i].width, rat1[i].height);
     }
   }
 
-  function renderApple() {
-    greenSnake.fillStyle = "#7CFC00";
-    greenSnake.fillRect(apple.x, apple.y, apple.width, apple.height);
+  function renderCheese() {
+    rat.fillStyle = "#7CFC00";
+    rat.fillRect(apple.x, apple.y, apple.width, apple.height);
   }
 
-  function checkCollisionWithApple() {
+  function checkCollisionWithItem() {
     if (
       player.x < apple.x + apple.width &&
       player.x + player.width > apple.x &&
       player.y < apple.y + apple.height &&
       player.y + player.height > apple.y
     ) {
-      generateRandomApplePosition();
-      maçasComidas++;
+      randomCheesePosition();
+      foodEaten++;
 
-      let lastSnakePart = snake[snake.length - 1];
-      snake.push({
-        x: lastSnakePart.x,
-        y: lastSnakePart.y,
+      let lastRat = rat1[rat1.length - 1];
+      rat1.push({
+        x: lastRat.x,
+        y: lastRat.y,
         width: tileSize,
         height: tileSize,
       });
 
-      if (maçasComidas === quantidadeMaca) {
+      if (foodEaten === food) {
         greenModal();
         resetGame();
       }
@@ -128,37 +122,37 @@
     modal.classList.add("open");
 
     modal.addEventListener("click", (e) => {
-      if (e.target.id == "fechar-snake" || e.target.id == "win-rat") {
+      if (e.target.id == "close-rat" || e.target.id == "win-rat") {
         modal.classList.remove("open");
       }
     });
   }
   function resetGame() {
-    maçasComidas = 0;
+    foodEaten = 0;
     player.x = tileSize + 1;
     player.y = tileSize + 10;
-    snake.length = initialSnakeLength;
+    rat1.length = ratLength;
 
-    snake.splice(2, 2, {
+    rat1.splice(2, 2, {
       x: player.x + tileSize,
       y: player.y,
       width: tileSize,
       height: tileSize,
     });
 
-    generateRandomApplePosition();
+    randomCheesePosition();
 
     clearInterval(countdownInterval);
   }
 
-  function updateSnake() {
-    for (let i = snake.length - 1; i > 0; i--) {
-      snake[i].x = snake[i - 1].x;
-      snake[i].y = snake[i - 1].y;
+  function upRat() {
+    for (let i = rat1.length - 1; i > 0; i--) {
+      rat1[i].x = rat1[i - 1].x;
+      rat1[i].y = rat1[i - 1].y;
     }
 
-    snake[0].x = player.x;
-    snake[0].y = player.y;
+    rat1[0].x = player.x;
+    rat1[0].y = player.y;
 
     if (
       maze[Math.floor(player.y / tileSize)][Math.floor(player.x / tileSize)] ===
@@ -168,7 +162,7 @@
     }
   }
 
-  function isAppleOnWall() {
+  function isItemOnWall() {
     for (let i in walls) {
       let wall = walls[i];
       if (
@@ -183,7 +177,7 @@
     return false;
   }
 
-  function generateRandomApplePosition() {
+  function randomCheesePosition() {
     let randomX = Math.floor(Math.random() * (WIDTH - tileSize));
     let randomY = Math.floor(Math.random() * (HEIGHT - tileSize));
     apple.x = randomX;
@@ -232,44 +226,44 @@
 
     switch (direction) {
       case "arrowLeft":
-        snakeLeft = true;
-        snakeUp = false;
-        snakeRight = false;
-        snakeDown = false;
+        rat1Left = true;
+        rat1Up = false;
+        rat1Right = false;
+        rat1Down = false;
         break;
       case "arrowUp":
-        snakeLeft = false;
-        snakeUp = true;
-        snakeRight = false;
-        snakeDown = false;
+        rat1Left = false;
+        rat1Up = true;
+        rat1Right = false;
+        rat1Down = false;
         break;
       case "arrowRight":
-        snakeLeft = false;
-        snakeUp = false;
-        snakeRight = true;
-        snakeDown = false;
+        rat1Left = false;
+        rat1Up = false;
+        rat1Right = true;
+        rat1Down = false;
         break;
       case "arrowDown":
-        snakeLeft = false;
-        snakeUp = false;
-        snakeRight = false;
-        snakeDown = true;
+        rat1Left = false;
+        rat1Up = false;
+        rat1Right = false;
+        rat1Down = true;
         break;
     }
   });
 
   function update() {
-    while (isAppleOnWall()) {
-      generateRandomApplePosition();
+    while (isItemOnWall()) {
+      randomCheesePosition();
     }
 
-    if (snakeLeft && !snakeRight) {
+    if (rat1Left && !rat1Right) {
       player.x -= player.speed;
-    } else if (snakeRight && !snakeLeft) {
+    } else if (rat1Right && !rat1Left) {
       player.x += player.speed;
-    } else if (snakeUp && !snakeDown) {
+    } else if (rat1Up && !rat1Down) {
       player.y -= player.speed;
-    } else if (snakeDown && !snakeUp) {
+    } else if (rat1Down && !rat1Up) {
       player.y += player.speed;
     }
 
@@ -278,40 +272,40 @@
       blockRectangle(player, wall);
     }
 
-    updateSnake();
-    checkCollisionWithApple();
+    upRat();
+    checkCollisionWithItem();
   }
 
   function render() {
-    greenSnake.clearRect(0, 0, WIDTH, HEIGHT);
-    greenSnake.save();
+    rat.clearRect(0, 0, WIDTH, HEIGHT);
+    rat.save();
     for (let row in maze) {
       for (let column in maze[row]) {
         let tile = maze[row][column];
         if (tile == 1) {
           let x = column * tileSize;
           let y = row * tileSize;
-          greenSnake.fillStyle = "#1D1313";
-          greenSnake.fillRect(x, y, tileSize, tileSize);
+          rat.fillStyle = "#1D1313";
+          rat.fillRect(x, y, tileSize, tileSize);
         } else if (tile === 2) {
           let x = column * tileSize;
           let y = row * tileSize;
-          greenSnake.fillStyle = "#FFFFFF";
-          greenSnake.fillRect(x, y, tileSize, tileSize);
+          rat.fillStyle = "#FFFFFF";
+          rat.fillRect(x, y, tileSize, tileSize);
         }
       }
     }
 
-    renderApple();
-    renderSnake();
+    renderCheese();
+    renderRat();
   }
 
   function loop() {
     update();
     render();
-    requestAnimationFrame(loop, green);
+    requestAnimationFrame(loop, canvas);
   }
-  requestAnimationFrame(loop, green);
+  requestAnimationFrame(loop, canvas);
 })();
 
 let selectedDirection = null;

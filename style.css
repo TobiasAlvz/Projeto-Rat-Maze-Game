@@ -273,7 +273,7 @@ header img {
   padding-top: 50px;
 }
 
-.green-rat {
+.canvas-rat {
   width: 450px;
   height: 300px;
   background-color: rgb(250, 250, 250);
@@ -664,7 +664,7 @@ button {
     align-items: center;
     justify-self: center;
   }
-  .green-rat {
+  .canvas-rat {
     width: 200px;
     height: 100px;
   }
