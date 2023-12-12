@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAT MAZE GAME</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="timer" id="timer"><span id="countdown-display">200</span></div>
+    </header>
+    <div class="wallpaper-rat">
+      <div class="level-1-rat">
+        <a href="#" onclick="greenModal()"></a>
+        <a href="#" onclick="gameOverModal()"></a>
+
+        <div class="grid-rat">
+          <canvas class="canvas-rat"></canvas>
+          <div class="control-1-rat">
+            <div class="block-rat">
+              <div class="arrow-rat"><img
+                  src="img/right-arrow.png" draggable="true"
+                  id="arrow-right"
+                  ondragstart="drag(event)"></div>
+              <div class="arrow-rat"><img src="img/down-arrow.png"
+                  draggable="true" id="arrow-down"
+                  ondragstart="drag(event)"></div>
+              <div class="arrow-rat"><img src="img/left-arrow.png"
+                  draggable="true" id="arrow-left"
+                  ondragstart="drag(event)"></div>
+              <div class="arrow-rat"><img src="img/up-arrow.png"
+                  draggable="true" id="arrow-up"
+                  ondragstart="drag(event)"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-2-rat">
+          <div class="main-rat">
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+            <div class="g-rat" ondrop="drop(event)"
+              ondragover="allowDrop(event)"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        <img>
+        <a href="#"></a>
+        <a href="menu.html" id="exitLink">
+          <img class="back-arrow" src="img/back-arrow.png"
+            alt="back arrow">
+        </a>
+
+        <div id="confirmationModal" class="modal-confirm">
+          <div class="modal-content">
+            <p>Você tem certeza que quer sair?</p>
+            <button id="confirmButton">Sim</button>
+            <button id="cancelButton">Cancelar</button>
+          </div>
+        </div>
+      </div>
+      <div class="win-rat" id="win-rat">
+        <div class="modal-win-rat">
+          <div class="rat-op">
+            <h2>Parabéns</h2>
+            <a href="fase-3.html"
+              class="play-again">Jogar
+              Novamente</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="game-over-rat" id="game-over-rat">
+        <div class="modal-game-over">
+          <h2>Game Over</h2>
+          <div class="option-rat">
+            <a href="fase-3.html"
+              class="try-again-rat">Tentar Novamente</a>
+          </div>
+        </div>
+      </div>
+
+      <script>
+              
+                function gameOverModal() {
+                    document.getElementById('game-over-rat').style.display = 'block';
+                }
+            
+               
+                function startCountdown() {
+                    var countdown = document.getElementById('countdown-display');
+                    var time = parseInt(countdown.innerText);
+            
+                    var countdownInterval = setInterval(function () {
+                        time--;
+            
+                        if (time <= 0) {
+                            clearInterval(countdownInterval);
+                           
+                            gameOverModal();
+                        }
+            
+                        countdown.innerText = time;
+                    }, 1000);
+                }
+            
+                
+                window.onload = function () {
+                    startCountdown();
+                };
+            </script>
+      <script src="js/fase-3.js"></script>
+    </body>
+  </html>
