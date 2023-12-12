@@ -254,10 +254,12 @@ header img {
   font-size: 24px;
   margin-bottom: 10px;
   color: #333;
+  text-transform: uppercase;
 }
 .credits-text .modal .text {
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 15px;
+  color: #181717;
+  font-size: 18px;
 }
 .credits-text .modal .student,
 .credits-text .modal .prof {
