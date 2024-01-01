@@ -123,10 +123,6 @@ $boxShadow: 0 0 20px rgba(0, 0, 0, 0.2);
   @include boxShadow;
 }
 
-.fechar-snake:hover {
-  opacity: 0.9;
-}
-
 .win-rat {
   width: 100vw;
   height: 100vh;
@@ -154,10 +150,6 @@ $boxShadow: 0 0 20px rgba(0, 0, 0, 0.2);
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
-}
-
-.open .modal-snake {
-  animation: abrir-modal 0.4s;
 }
 
 .text-rat {
