@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
@@ -268,6 +269,58 @@ header img {
   color: #333;
 }
 
+.tutorial-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 2px solid #4d4d4d;
+  border-radius: 10px;
+  max-width: 80%;
+  text-align: center;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.tutorial-container h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #032088;
+}
+.tutorial-container p {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #333;
+}
+.tutorial-container .close-tutorial {
+  cursor: pointer;
+  font-size: 1.4em;
+  color: #032088;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+.tutorial-container .close-tutorial:before, .tutorial-container .close-tutorial:after {
+  content: "×";
+  font-family: "Arial", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+}
+.tutorial-container .close-tutorial:hover {
+  color: #bb1d1d;
+}
+
+a.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .level-1-rat {
   display: flex;
   justify-content: center;
@@ -361,10 +414,6 @@ header img {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
-.fechar-snake:hover {
-  opacity: 0.9;
-}
-
 .win-rat {
   width: 100vw;
   height: 100vh;
@@ -392,10 +441,6 @@ header img {
     transform: translate3d(0, 0, 0);
   }
 }
-.open .modal-snake {
-  animation: abrir-modal 0.4s;
-}
-
 .text-rat {
   text-align: center;
   font-size: 22px;

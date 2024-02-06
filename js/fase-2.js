@@ -10,7 +10,7 @@
   let WIDTH = canvas.width;
   let HEIGHT = canvas.height;
 
-  let food = 4;
+  let food = 1;
   let foodEaten = 0;
   let ratLength = 1;
 

@@ -10,7 +10,7 @@
   let WIDTH = canvas.width;
   let HEIGHT = canvas.height;
 
-  let food = 3;
+  let food = 1;
   let foodEaten = 0;
   let ratLength = 1;
 
@@ -29,7 +29,7 @@
     y: tileSize + 0,
     width: tileSize,
     height: tileSize,
-    speed: 1.5,
+    speed: 2,
     image: new Image(),
   };
   player.image.src = "img/rat.png";
