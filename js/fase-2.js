@@ -81,7 +81,7 @@
   }
 
   function renderRat() {
-    rat.fillStyle = "#FF0000";
+    rat.fillStyle = "#757575";
     rat.fillStyle = player.image;
     for (let i = 0; i < rat1.length; i++) {
       rat.fillRect(rat1[i].x, rat1[i].y, rat1[i].width, rat1[i].height);
@@ -89,7 +89,7 @@
   }
 
   function renderCheese() {
-    rat.fillStyle = "#7CFC00";
+    rat.fillStyle = "#FABE13";
     rat.fillRect(cheese.x, cheese.y, cheese.width, cheese.height);
   }
 
