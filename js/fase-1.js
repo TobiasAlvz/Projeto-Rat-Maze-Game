@@ -219,6 +219,34 @@
     e.dataTransfer.setData("text/plain", "arrowDown");
   });
 
+  arrowLeft.addEventListener("click", function () {
+    rat1Left = true;
+    rat1Up = false;
+    rat1Right = false;
+    rat1Down = false;
+  });
+
+  arrowUp.addEventListener("click", function () {
+    rat1Left = false;
+    rat1Up = true;
+    rat1Right = false;
+    rat1Down = false;
+  });
+
+  arrowRight.addEventListener("click", function () {
+    rat1Left = false;
+    rat1Up = false;
+    rat1Right = true;
+    rat1Down = false;
+  });
+
+  arrowDown.addEventListener("click", function () {
+    rat1Left = false;
+    rat1Up = false;
+    rat1Right = false;
+    rat1Down = true;
+  });
+
   window.addEventListener("drop", function (e) {
     e.preventDefault();
 
@@ -352,5 +380,89 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function closeConfirmationModal() {
     modal.style.display = "none";
+  }
+});
+
+function dragStart(arrow) {
+  let event = new Event("dragstart");
+  arrow.dispatchEvent(event);
+}
+
+function drop(event) {
+  let img = document.createElement("img");
+  img.src = selectedDirection;
+  img.classList.add("arrow"); 
+  document.querySelector(".g-rat").appendChild(img);
+
+  document.querySelector(".g-rat").classList.remove("drap");
+  event.preventDefault();
+}
+
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+document
+  .querySelector(".control-2-rat")
+  .addEventListener("click", function (event) {
+    if (event.target.tagName === "IMG") {
+      selectedDirection = event.target.src;
+      let img = document.createElement("img");
+      img.src = selectedDirection;
+      img.classList.add("arrow"); 
+      document.querySelector(".g-rat").appendChild(img);
+      dragStart(img); 
+    }
+  });
+
+
+arrowLeft.addEventListener("dragstart", function (e) {
+  e.dataTransfer.setData("text/plain", "arrowLeft");
+});
+
+arrowUp.addEventListener("dragstart", function (e) {
+  e.dataTransfer.setData("text/plain", "arrowUp");
+});
+
+arrowRight.addEventListener("dragstart", function (e) {
+  e.dataTransfer.setData("text/plain", "arrowRight");
+});
+
+arrowDown.addEventListener("dragstart", function (e) {
+  e.dataTransfer.setData("text/plain", "arrowDown");
+});
+
+
+window.addEventListener("drop", function (e) {
+  e.preventDefault();
+
+  let direction = e.dataTransfer.getData("text/plain");
+
+  switch (direction) {
+    case "arrowLeft":
+      rat1Left = true;
+      rat1Up = false;
+      rat1Right = false;
+      rat1Down = false;
+      break;
+    case "arrowUp":
+      rat1Left = false;
+      rat1Up = true;
+      rat1Right = false;
+      rat1Down = false;
+      break;
+    case "arrowRight":
+      rat1Left = false;
+      rat1Up = false;
+      rat1Right = true;
+      rat1Down = false;
+      break;
+    case "arrowDown":
+      rat1Left = false;
+      rat1Up = false;
+      rat1Right = false;
+      rat1Down = true;
+      break;
   }
 });

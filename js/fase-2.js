@@ -220,6 +220,34 @@
     e.dataTransfer.setData("text/plain", "arrowDown");
   });
 
+  arrowLeft.addEventListener("click", function () {
+    rat1Left = true;
+    rat1Up = false;
+    rat1Right = false;
+    rat1Down = false;
+  });
+
+  arrowUp.addEventListener("click", function () {
+    rat1Left = false;
+    rat1Up = true;
+    rat1Right = false;
+    rat1Down = false;
+  });
+
+  arrowRight.addEventListener("click", function () {
+    rat1Left = false;
+    rat1Up = false;
+    rat1Right = true;
+    rat1Down = false;
+  });
+
+  arrowDown.addEventListener("click", function () {
+    rat1Left = false;
+    rat1Up = false;
+    rat1Right = false;
+    rat1Down = true;
+  });
+
   window.addEventListener("drop", function (e) {
     e.preventDefault();
 
