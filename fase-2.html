@@ -12,7 +12,22 @@
   <body>
     <header>
       <div class="timer" id="timer"><span
-          id="countdown-display">200</span></div>
+          id="countdown-display">250</span></div>
+
+      <div class="tutorial-container" id="tutorialContainer"
+        style="display: block;">
+        <h2>Fase 2</h2>
+        <p>
+          No labirinto, há um teletransporte azul. Ao atravessá-lo, não será
+          possível retornar pelo mesmo caminho. Explore outras rotas para chegar
+          aos queijos.
+        </p>
+        <p>
+          <a class="close-tutorial" onclick="closeTutorial()"></a>
+        </p>
+
+      </div>
+
     </header>
     <div class="wallpaper-rat">
       <div class="level-1-rat">
@@ -201,5 +216,6 @@
                 };
             </script>
       <script src="js/fase-2.js"></script>
+      <script src="js/menu.js"></script>
     </body>
   </html>
